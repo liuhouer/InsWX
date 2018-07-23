@@ -89,7 +89,8 @@ public class MenuHandler {
                   
 				  + "{\"name\":\"企业简介\",\"sub_button\":["                                                
 				  + "{\"type\":\"view\",\"name\":\"公司简介\",\"url\":\"" + getUrl(introduction) + "\"},"          
-				  + "{\"type\":\"click\",\"name\":\"服务内容\",\"key\":\"01_02_content\"}"      
+				  + "{\"type\":\"click\",\"name\":\"服务内容\",\"key\":\"01_02_content\"},"      
+				  + "{\"type\":\"click\",\"name\":\"服务流程\",\"key\":\"01_03_steps\"}"      
 				  + "]},"                                                                                
                   
                   

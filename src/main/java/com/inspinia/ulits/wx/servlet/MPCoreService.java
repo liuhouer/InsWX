@@ -100,36 +100,36 @@ public class MPCoreService {
                     System.out.println(eventKey);
                     if (eventKey.equals("01_02_content")) {   
                     	
-//                    	{
-//                    		"item": [{
-//                    			"media_id": "CdsrrutLKu3EIS3F-O5hLI9IHLuW9XmFiGAnFEDwK9Q",
-//                    			"name": "易元康单张-02.png",
-//                    			"update_time": 1530868336,
-//                    			"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTZibBhPtvfe8DmqrAA1Trmk15wsMfx7W1lS2zjsVuz34sWLBJ8diaVTLg\/0?wx_fmt=png"
-//                    		}, {
-//                    			"media_id": "CdsrrutLKu3EIS3F-O5hLGKZb2TFZOXKQHCFOmOcaHc",
-//                    			"name": "易元康单张-02.png",
-//                    			"update_time": 1530867962,
-//                    			"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoT8ePHq0EZyBZj6jGbOCSyIv4N3vuiaa1zKnJldRfexicwFCp9U5OCkiabw\/0?wx_fmt=png"
-//                    		}, {
-//                    			"media_id": "CdsrrutLKu3EIS3F-O5hLLLu9_bqGc36NPOYQfuwmTY",
-//                    			"name": "易元康单张-02.png",
-//                    			"update_time": 1530867831,
-//                    			"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTHuF5SB3TIOCJPmBrUklgxkp3u6BiaYrhEK3vZlS6ZE1xq0ukJdHCz4w\/0?wx_fmt=png"
-//                    		}, {
-//                    			"media_id": "CdsrrutLKu3EIS3F-O5hLJ4CU6-xiEk_HsbB2vvOTKk",
-//                    			"name": "易元康单张-02.png",
-//                    			"update_time": 1530867767,
-//                    			"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTHuF5SB3TIOCJPmBrUklgxkp3u6BiaYrhEK3vZlS6ZE1xq0ukJdHCz4w\/0?wx_fmt=png"
-//                    		}, {
-//                    			"media_id": "CdsrrutLKu3EIS3F-O5hLIpJOyqt25xoywCJEDI3VyQ",
-//                    			"name": "屏幕快照 2018-07-06 下午4.57.44.png",
-//                    			"update_time": 1530867514,
-//                    			"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTriafiakMH7j3DnhcPQia1gjiaibibQjNxBYUQuGrTyGHb6SRSws4LzicjhoHQ\/0?wx_fmt=png"
-//                    		}],
-//                    		"total_count": 5,
-//                    		"item_count": 5
-//                    	}
+////                    ################### 图片资源 --media_id###################
+//                    	"item": [{
+//                    		"media_id": "CdsrrutLKu3EIS3F-O5hLMxSvmDGZsvr4CNNCVhF_-4",
+//                    		"name": "微博图片.jpg",
+//                    		"update_time": 1532343242,
+//                    		"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/pSIPazIL0hp3hprtZpTqsYgicfZibAsXJQCScJxa6o9VAuN1VCevkOaX0gxPn0qvxEwIiaMLY5cyOYV2UeibuU8UwA\/0?wx_fmt=jpeg"
+//                    	}, {
+//                    		"media_id": "CdsrrutLKu3EIS3F-O5hLI9IHLuW9XmFiGAnFEDwK9Q",
+//                    		"name": "易元康单张-02.png",
+//                    		"update_time": 1530868336,
+//                    		"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTZibBhPtvfe8DmqrAA1Trmk15wsMfx7W1lS2zjsVuz34sWLBJ8diaVTLg\/0?wx_fmt=png"
+//                    	}, {
+//                    		"media_id": "CdsrrutLKu3EIS3F-O5hLGKZb2TFZOXKQHCFOmOcaHc",
+//                    		"name": "易元康单张-02.png",
+//                    		"update_time": 1530867962,
+//                    		"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoT8ePHq0EZyBZj6jGbOCSyIv4N3vuiaa1zKnJldRfexicwFCp9U5OCkiabw\/0?wx_fmt=png"
+//                    	}, {
+//                    		"media_id": "CdsrrutLKu3EIS3F-O5hLLLu9_bqGc36NPOYQfuwmTY",
+//                    		"name": "易元康单张-02.png",
+//                    		"update_time": 1530867831,
+//                    		"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTHuF5SB3TIOCJPmBrUklgxkp3u6BiaYrhEK3vZlS6ZE1xq0ukJdHCz4w\/0?wx_fmt=png"
+//                    	}, {
+//                    		"media_id": "CdsrrutLKu3EIS3F-O5hLJ4CU6-xiEk_HsbB2vvOTKk",
+//                    		"name": "易元康单张-02.png",
+//                    		"update_time": 1530867767,
+//                    		"url": "http:\/\/mmbiz.qpic.cn\/mmbiz_png\/pSIPazIL0hoAHa6DLapve05R1EWoDDoTHuF5SB3TIOCJPmBrUklgxkp3u6BiaYrhEK3vZlS6ZE1xq0ukJdHCz4w\/0?wx_fmt=png"
+//                    	}],
+//                    	"total_count": 6,
+//                    	"item_count": 5
+//                    }
                     	Image image = new Image();
                     	image.setMediaId("CdsrrutLKu3EIS3F-O5hLGKZb2TFZOXKQHCFOmOcaHc");
                     	String imageMessage = MessageResponse.getImageMessage(fromUserName, toUserName, image);
@@ -143,6 +143,13 @@ public class MPCoreService {
                         		"温馨提示：文字或语音留言请点击页面左下角“小键盘”切换\n" + 
                         		"";  
                         
+                    }else if (eventKey.equals("01_03_steps")){
+                    	Image image = new Image();
+                    	image.setMediaId("CdsrrutLKu3EIS3F-O5hLMxSvmDGZsvr4CNNCVhF_-4");
+                    	String imageMessage = MessageResponse.getImageMessage(fromUserName, toUserName, image);
+                    	System.out.println(imageMessage);
+                        return imageMessage;
+                    	
                     }
                     
                 }
