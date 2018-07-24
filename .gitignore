@@ -3,5 +3,8 @@ logs/
 .settings/
 *.bin
 *.lock
+*.jar
+*.war
+*.class
 
 #demo/*.log 忽略所有demo目录下的以log结尾的文件

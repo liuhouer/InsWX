@@ -133,6 +133,18 @@ a.btn {
     background-color: #49c7be;
 }
 
+.btn-greey {
+    color: #fff;
+    text-shadow: none; /* Prevent inheritence from `body` */
+    background-color: #6fb82b;
+    border: none;
+}
+
+.btn-greey:hover {
+    color: #fff;
+    background-color: #6fb82b;
+}
+
 .btn-success {
 
 }
@@ -160,6 +172,19 @@ a.btn {
     border: 0;
     color: #fff;
 }
+
+.btn-red {
+    background: #e6454a;
+    border: 0;
+    color: #fff;
+}
+
+.btn-red:hover, .btn-pink:focus {
+    background: #e6454a;
+    border: 0;
+    color: #fff;
+}
+
 
 .loveyearBtn, .loveyearBtn small {
     color: #fff;
@@ -1716,7 +1741,7 @@ a.project-card-link {
 
 
 .label-small{
-	font-size: 3px;
+	font-size: 10px;
     line-height: 1;
     font-weight: 400;
     letter-spacing: normal;

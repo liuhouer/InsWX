@@ -2,6 +2,7 @@ package com.inspinia.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,6 +46,21 @@ public class HealthController {
 		
 		return "order";
     }
+	
+	/**
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/orderList")
+	public String orderList(Model model,HttpServletRequest request){
+		
+		List<Health> orderList = healthService.selectAll();
+		
+		model.addAttribute("orderList",orderList);
+		
+		return "orderList";
+    }
 
 	
 	/**
@@ -58,8 +74,6 @@ public class HealthController {
 		
 		//获取openid
 		String openid = getOpenID(request);
-		
-		if(StringUtils.isEmpty(openid)) openid = "1122312asdfdads";
 		
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");

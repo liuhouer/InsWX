@@ -78,7 +78,7 @@
       This element was generated on Thu Jul 19 15:45:13 CST 2018.
     -->
     select id, openid, name, phone, address, project, agreement, addtime, status, info
-    from np_health
+    from np_health order by id desc
   </select>
      
 </mapper>
