@@ -51,7 +51,7 @@ public class MPCoreService {
             // 文本消息
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
             	
-                respContent = "您发送的是文本消息！";
+                respContent = "您的信息我们已经收到，请留下您的手机号码，马上安排咨询顾问与您联系。";
             }
             // 图片消息
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_IMAGE)) {
@@ -136,8 +136,8 @@ public class MPCoreService {
                     	System.out.println(imageMessage);
                         return imageMessage;
                     } else if (eventKey.equals("02_introduce")) {  
-                        respContent = "您好，欢迎关注广州易元康健康管理咨询有限公司官方微信平台，我是易元康医生黄助理\n" + 
-                        		"服务电话： 020.31602206  \n" + 
+                        respContent = "您好，欢迎关注广州易元康健康管理咨询有限公司官方微信平台，我是易元康咨询顾问，很高兴为您服务！n" + 
+                        		"服务电话： 020.31602206   \n" + 
                         		"手机号码：186 7583 0099\n" + 
                         		"请问有什么可以帮到您呢？\n" + 
                         		"温馨提示：文字或语音留言请点击页面左下角“小键盘”切换\n" + 

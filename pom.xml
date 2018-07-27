@@ -3,7 +3,6 @@
   <groupId>com.inspinia</groupId>
   <artifactId>InsWX</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -120,4 +119,5 @@
 				</plugin>
 			</plugins>
   	</build>
+  	<packaging>war</packaging>
 </project>

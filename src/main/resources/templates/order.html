@@ -48,7 +48,14 @@
 						<input id="J_project" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="project" type="text" />
 					</div>
 					<div class="form-group padding-b20  center">
-						<div>同意<label class="padding-l10"><input id="J_confirm" type="checkbox" class="" style="display: inline-block"/></label><a href="/confirm" style="color: orange;">服务知情同意书</a> </div>
+						<div>同意
+						<span style="line-height: 20px;">
+						<label class="padding-l20">
+						
+						<input id="J_confirm" type="checkbox" class="" style="display: inline-block;zoom:150%;vertical-align: bottom;pad"/><a href="/confirm"  style="color: orange;font-size: 16px;padding-left: 5px;">服务知情同意书</a>
+						</label>
+						</span>
+						 </div>
 					</div>
 					<input name="openid" th:value="${openid}" id="J_openid" type="hidden" />
 					<div class="form-group center">
@@ -103,7 +110,7 @@
 				success : function(msg) {
 					console.log(msg);
 					if (msg  == "success") {
-						alert('提交成功');
+						alert('您的预约已提交，我们将尽快回复您。');
 						$('#formSubmit').attr('disabled', true);
 					} else {
 						alert('出错了');
