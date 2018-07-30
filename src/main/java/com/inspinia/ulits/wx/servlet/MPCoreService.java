@@ -136,12 +136,10 @@ public class MPCoreService {
                     	System.out.println(imageMessage);
                         return imageMessage;
                     } else if (eventKey.equals("02_introduce")) {  
-                        respContent = "您好，欢迎关注广州易元康健康管理咨询有限公司官方微信平台，我是易元康咨询顾问，很高兴为您服务！n" + 
+                        respContent = "您好，欢迎关注广州易元康健康管理咨询有限公司官方微信平台，我是易元康咨询顾问，很高兴为您服务！\n" + 
                         		"服务电话： 020.31602206   \n" + 
-                        		"手机号码：186 7583 0099\n" + 
-                        		"请问有什么可以帮到您呢？\n" + 
-                        		"温馨提示：文字或语音留言请点击页面左下角“小键盘”切换\n" + 
-                        		"";  
+                        		"手机号码：186 7583 0099  \n" + 
+                        		"温馨提示：文字或语音留言请点击页面左下角“小键盘”切换\n";  
                         
                     }else if (eventKey.equals("01_03_steps")){
                     	Image image = new Image();
