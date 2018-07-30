@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.inspinia.entity.Health;
+import com.inspinia.entity.Member;
 import com.inspinia.service.HealthService;
+import com.inspinia.service.MemberService;
 import com.inspinia.ulits.BC_Constant;
 import com.inspinia.ulits.TimeUtils;
 import com.inspinia.ulits.wx.SignUtil;
@@ -29,6 +31,9 @@ public class HealthController {
 	
 	@Autowired
 	public HealthService healthService;
+	
+	@Autowired
+	public MemberService memberService;
 	
 	
 	/**
@@ -193,6 +198,94 @@ public class HealthController {
 	public String introduction(Model model){
 		return "introduction";
     }
+	
+	
+	/**
+	 * 服务条款：同意后跳转个人信息填写页面
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/serviceClause")
+	public String serviceClause(Model model,HttpServletRequest request){
+		//获取openid
+		String openid = getOpenID(request);
+		
+		if(StringUtils.isNotEmpty(openid)) model.addAttribute("openid",openid);
+		return "serviceClause";
+    }
+	
+	
+	/**
+	 * 个人信息录入页面
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/member")
+	public String member(Model model,HttpServletRequest request){
+		//获取openid
+		String openid = getOpenID(request);
+		
+		if(StringUtils.isNotEmpty(openid)) model.addAttribute("openid",openid);
+		return "member";
+    }
+	
+	/**
+	 * 保存个人信息
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/saveMember")
+	@ResponseBody
+	public String saveMember(Model model,HttpServletRequest request){
+		
+		//获取openid
+		String openid = getOpenID(request);
+		
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		String address = request.getParameter("address");
+		String birth = request.getParameter("birth");
+		String gender = request.getParameter("gender");
+		String recommender = request.getParameter("recommender");
+		
+		if(StringUtils.isNotEmpty(openid)) {
+			Member m = new Member();
+			
+			m.setAddress(address);
+			m.setAddtime(TimeUtils.nowTime());
+			m.setBirth(birth);
+			m.setGender(gender);
+			m.setRecommender(recommender);
+			m.setName(name);
+			m.setOpenid(openid);
+			m.setPhone(phone);
+			
+			m.setStatus(0);
+			memberService.insert(m);
+		}
+		
+		return "success";
+    }
+	
+
+	/**
+	 * 会员列表
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/memberList")
+	public String memberList(Model model,HttpServletRequest request){
+		
+		List<Member> memberList = memberService.selectAll();
+		
+		model.addAttribute("memberList",memberList);
+		
+		return "memberList";
+    }
+
+	
 	/**
 	 * oauth2重定向域名校验
 	 * @param model

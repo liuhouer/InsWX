@@ -43,6 +43,11 @@ public class MenuHandler {
      */
     static String   order ="/index";
     
+    /**
+     * 服务条款
+     */
+    static String   serviceClause ="/serviceClause";
+    
     
 
     public static String getUrl(String targetUrl) {
@@ -98,12 +103,18 @@ public class MenuHandler {
 			      + "\"type\":\"click\","
 			      + "\"name\":\"健康咨询\","
 			      + "\"key\":\"02_introduce\"},"
+			      
+			      
+			      + "{\"name\":\"个人中心\",\"sub_button\":["                                                
+			      + "{\"type\":\"view\",\"name\":\"预约服务\",\"url\":\"" + getUrl(order) + "\"},"          
+			      + "{\"type\":\"view\",\"name\":\"元康会员\",\"url\":\"" + getUrl(serviceClause) + "\"}"      
+			      + "]}"  ;   
 
-			      + "{"
-			      + "\"type\":\"view\","
-			      + "\"name\":\"预约服务\","
-			      + "\"url\":\""+getUrl(order)+"\"}"
-			      +"]}";
+//			      + "{"
+//			      + "\"type\":\"view\","
+//			      + "\"name\":\"预约服务\","
+//			      + "\"url\":\""+getUrl(order)+"\"}"
+//			      +"]}";
     }
 
     public String creatMenu() {

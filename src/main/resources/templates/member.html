@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>易元康健康</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/qinco.css}" rel="stylesheet" />
+<link th:href="@{/css/main2.css}" rel="stylesheet" />
+<script th:src="@{/js/jquery-1.7.2.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.js}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+</head>
+<body>
+
+    <div class="col-sm-12 padding0"  >
+		<div class="form-control  btn-greey left" style="height: 41px;">
+			<label style="vertical-align: bottom; font-size: 16px;padding-left:10px;padding-top:5px;">注册会员</label><label
+				class="margin-l10 margin-t10 label-small baizi">信息会加密保证您的隐私安全</label>
+		</div>
+	</div>
+	<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+
+
+				<form  id="J_weixin1_form" class="form margin-t20" enctype="multipart/form-data">
+					<span class="glyphicon glyphicon-user margin5" style="color:#6fb82b;"></span>
+					<span style="color: #999; opacity: 1;">姓名<font color="red">*</font></span>
+					<div class="form-group padding-b5">
+					<!-- 王小二 -->
+						<input id="J_name" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="name" type="text" />
+					</div>
+					<span class="glyphicon glyphicon-ok-circle margin5" style="color:#6fb82b;"></span>
+					<span style="color: #999; opacity: 1;">性别<font color="red">*</font></span>
+					<!-- <div class="form-group padding-b10">
+					男   女  保密
+						<input id="J_gender" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="gender" type="text" />
+					</div> -->
+					<div class=" margin-t10 form-group padding-b10">
+						<label class="radio-inline "> <input type="radio"
+							name="gender" class="gender" id="J_gender1" value="男" /> 男
+						</label> 
+						<label class="radio-inline "> <input type="radio" class="gender"
+							name="gender" id="J_gender2" value="女" /> 女
+						</label>
+					</div>
+					<span class="glyphicon glyphicon-time margin5" style="color:#6fb82b;"></span>
+					<span style="color: #999; opacity: 1;">出生年月<font color="red">*</font></span>
+					<div class="form-group padding-b10">
+					
+                                <input id="J_birth" placeholder="1995-12-31"
+                                       class="form_date form-control border-light-1 input-lg bg-lyellow padding10 grid98 radius-0"
+                                       name="birth" type="text"  />
+					<!-- 1995-12-31 -->
+						<!-- <input id="J_birth" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="birth" type="text" /> -->
+					</div>
+					<span class="glyphicon glyphicon-phone margin5" style="color:#6fb82b;"></span>
+					<span style="color: #999; opacity: 1;">手机号码<font color="red">*</font></span>
+					<div class="form-group padding-b10">
+					<!-- 13826185040 -->
+						<input id="J_phone" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="phone" type="text" />
+					</div>
+					<span class="glyphicon glyphicon-map-marker margin5" style="color:#6fb82b;"></span>
+					<span style="color: #999; opacity: 1;">常住地址</span>
+					<div class="form-group padding-b10">
+					<!-- 广州市白云区东平大道8号 -->
+						<input id="J_address" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="address" type="text" />
+					</div>
+					<span class="glyphicon glyphicon-comment margin5" style="color:#6fb82b;"></span>
+					<span style="color: #999; opacity: 1;">推荐会员</span>
+					<div class="form-group padding-b10">
+					<!-- 推荐会员 -->
+						<input id="J_recommender" placeholder="" class="form-control  input-lg  border-light-1 bg-lyellow grid98 radius-0" name="recommender" type="text" />
+					</div>
+					<input name="openid" th:value="${openid}" id="J_openid" type="hidden" />
+					<div class="form-group center">
+						<input  id="formSubmit" data-activetext="提交信息 ››"
+							class="btn btn-red btn-xlg margin-t10 grid90" value="提交信息"
+							type="button" />
+					</div>
+				</form>
+			</div>
+	</div>
+</div>
+<script th:inline="javascript">
+/*<![CDATA[*/
+	
+	
+	 //微信浏览器中，aler弹框不显示域名
+        (function(){
+            //先判断是否为微信浏览器
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                //重写alert方法，alert()方法重写，不能传多余参数
+                window.alert = function(name){
+                    var iframe = document.createElement("IFRAME");
+                    iframe.style.display="none";
+                    iframe.setAttribute("src", 'data:text/plain');
+                    document.documentElement.appendChild(iframe);
+                    window.frames[0].window.alert(name);
+                    iframe.parentNode.removeChild(iframe);
+                }
+            }
+        })();
+	
+	$(function(){
+		
+		//日期控件初始化
+		$('#J_birth').datepicker({
+			format : 'yyyy-mm-dd',
+			autoclose : true
+		});
+
+		
+
+		$('#formSubmit').click(function() {
+			var name = $("#J_name").val();
+			var phone = $("#J_phone").val();
+			var address = $("#J_address").val();
+			var birth = $("#J_birth").val();
+			//var gender = 
+			var gender = "";
+			$("input[type='radio']").each(function(){
+				var id = $(this).attr("id");
+				if ($("#" + id).attr("checked") == "checked") {
+					gender = $("#" + id).val();
+				}
+			});
+			var recommender = $("#J_recommender").val();
+			var openid = $("#J_openid").val();
+
+			if (!name) {
+				alert('请填写姓名');
+				return;
+			}
+			if (!gender) {
+				alert('请填写性别');
+				return;
+			}
+			if (!phone) {
+				alert('请填写电话');
+				return;
+			}
+			if (!birth) {
+				alert('请填写出生日期');
+				return;
+			}
+
+			if (!address) {
+				alert('请填写常用住址');
+				return;
+			}
+			$.ajax({
+				url : "/saveMember",
+				type : "post",
+				data : {
+					"name" : name,
+					"phone" : phone,
+					"address" : address,
+					"birth" : birth,
+					"gender" : gender,
+					"recommender" : recommender,
+					"openid" : openid
+				},
+				success : function(msg) {
+					console.log(msg);
+					if (msg == "success") {
+						alert('您的资料已提交，我们将尽快回复您。');
+						$('#formSubmit').attr('disabled', true);
+					} else {
+						alert('出错了');
+					}
+				}
+
+			});
+		});
+	})
+
+	/*]]>*/
+</script>
+</body>
+</html>

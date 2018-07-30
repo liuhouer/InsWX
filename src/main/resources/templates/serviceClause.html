@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>易元康健康</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/qinco.css}" rel="stylesheet" />
+<link th:href="@{/css/main2.css}" rel="stylesheet" />
+<script th:src="@{/js/jquery-1.7.2.js}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+</head>
+<body>
+
+    <div class="col-sm-12 padding0"  >
+		<div class="form-control  btn-greey left" style="height: 41px;">
+			<label style="vertical-align: bottom; font-size: 16px;padding-top:5px;">易元康健康会员服务</label>
+		</div>
+	</div>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+
+				<p class="padding-t20">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;尊敬的阁下，欢迎加入易元康健康会员，非常高兴能为您提供健康咨询、就医咨询服务。敬畏生命，康元为本!让我们共同为健康而努力!</p>
+				<p><label class="bold" style="display: unset;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请您阅读会员服务内容:</label>
+				</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、本人自愿成为易元康健康会员，享受易元康提供的健康咨询和就医咨询服务;</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、易元康健康会员采用年费制，每年365元会员费，自缴纳会员费当日起一年周期，我们的服务理念是一(易)天一元(元)为健康(康) ;</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、会员将享受免费健康咨询及就医咨询服务;</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、会员将享受指定重点三甲医院健康管理中心体检VIP贵宾服务一次(医院体检费用另行支付) ;</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5、会员有资格成为易元康区域办事处负责人，并享受奖励政策；</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6、会员将主动接收到易元康最新医疗及健康咨询信息；</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7、为您建立健康管理档案，及时跟踪服务；</p>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8、推荐参与医疗大健康服务产业的传播和推广，为社会大健康添砖加瓦！</p>
+				<input name="openid" th:value="${openid}" id="J_openid" type="hidden" />
+				<div class="form-group center">
+					<input id="formSubmit" data-activetext="同意 ››"
+						class="btn btn-red btn-xlg margin-t10 grid90" value="同意"
+						type="button" />
+				</div>
+			</div>
+	</div>
+</div>
+
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+	
+	
+	
+	$(function(){
+		$('#formSubmit').click(function() {
+			var openid = $("#J_openid").val();
+			window.location.href = "/member?openid="+openid;
+		});
+	})
+	
+
+	/*]]>*/
+</script>
+</body>
+</html>
